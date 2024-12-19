@@ -1,0 +1,1 @@
+# qubership-graylog-obfuscation-plugin
