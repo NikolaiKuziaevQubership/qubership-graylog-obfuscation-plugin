@@ -1,0 +1,27 @@
+.number-input {
+    width: 65px !important;
+}
+
+.change-cell {
+    width: 40px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.error-input {
+    border-color: red !important;
+}
+
+.table caption p:nth-of-type(1) {
+    color: #666;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.table td:not(:last-child) {
+    vertical-align: bottom;
+}
+
+.error {
+    color: red;
+}

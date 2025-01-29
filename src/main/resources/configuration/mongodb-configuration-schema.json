@@ -1,0 +1,77 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "properties": {
+      "is-obfuscation-enabled": {
+        "bsonType": "bool"
+      },
+      "sensitive-regular-expressions": {
+        "bsonType": "array",
+        "additionalItems": false,
+        "items": {
+          "bsonType": "object",
+          "required": ["id", "name", "pattern", "importance"],
+          "properties": {
+            "id": {
+              "bsonType": "int",
+              "minimum": 0,
+              "maximum": 2147483647
+            },
+            "name": {
+              "bsonType": "string"
+            },
+            "pattern": {
+              "bsonType": "string"
+            },
+            "importance": {
+              "bsonType": "int",
+              "minimum": -2147483648,
+              "maximum": 2147483647
+            }
+          }
+        }
+      },
+      "field-names": {
+        "bsonType": "array",
+        "additionalItems": false,
+        "uniqueItems": true,
+        "items": {
+          "bsonType": "string"
+        }
+      },
+      "white-regular-expressions": {
+        "bsonType": "array",
+        "additionalItems": false,
+        "items": {
+          "bsonType": "object",
+          "required": ["id", "name", "pattern"],
+          "properties": {
+            "id": {
+              "bsonType": "int",
+              "minimum": 0,
+              "maximum": 2147483647
+            },
+            "name": {
+              "bsonType": "string"
+            },
+            "pattern": {
+              "bsonType": "string"
+            }
+          }
+        }
+      },
+      "stream-titles": {
+        "bsonType": "array",
+        "additionalItems": false,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      },
+      "text-replacer": {
+        "bsonType": "string",
+        "enum": ["Static Star Replacer"]
+      }
+    }
+  }
+}
