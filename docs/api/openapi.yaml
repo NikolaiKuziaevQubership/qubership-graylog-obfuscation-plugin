@@ -1,0 +1,250 @@
+openapi: 3.0.1
+info:
+  title: Graylog Obfuscation Plugin OpenAPI definition
+  version: v0.0.1
+  description: |
+    This is document that describes proposed REST API for Graylog Obfuscation Plugin.
+
+servers:
+  - url: https://{GRAYLOG_URL}/api/plugins/org.qubership.graylog2.plugin
+    description: Graylog instance
+
+tags:
+  - name: Configuration
+    description: Configuration changes
+  - name: Obfuscation
+    description: Obfuscation operations
+
+paths:
+  /obfuscation/configuration:
+    get:
+      tags:
+        - Configuration
+      description: Get current configuration
+      operationId: getConfiguration
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConfiguration'
+    post:
+      tags:
+        - Configuration
+      description: Install new configuration
+      operationId: postConfiguration
+      requestBody:
+        description: New configuration
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetConfiguration'
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              example: "Success"
+        "500":
+          description: Internal Server Error
+  /obfuscation/configuration/sync:
+    put:
+      tags:
+        - Configuration
+      description: Synchronize configuration
+      operationId: syncConfiguration
+      requestBody:
+        description: Sync mode, possible values are sync_mode={CREATE_ONLY|FORCE_UPDATE|SKIP}
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                sync_mode:
+                  type: string
+              required:
+                - sync_mode
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              example: "Success"
+        "500":
+          description: Internal Server Error
+  /obfuscation/configuration/reset:
+    put:
+      tags:
+        - Configuration
+      description: Reset configuration
+      operationId: resetConfiguration
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              example: "Success"
+        "500":
+          description: Internal Server Error
+  /obfuscation/configuration/restore:
+    put:
+      tags:
+        - Configuration
+      description: Restore configuration
+      operationId: restoreConfiguration
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              example: "Success"
+        "500":
+          description: Internal Server Error
+  /obfuscation:
+    post:
+      tags:
+        - Obfuscation
+      description: Obfuscate text
+      operationId: doObfuscation
+      requestBody:
+        description: Text
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+              example: "some message"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObfuscationResponse'
+  /obfuscation/replacers:
+    get:
+      tags:
+        - Obfuscation
+      description: Get all text replacers
+      operationId: getReplacers
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                example: {"Static Star Replacer": "********"}
+  /regex/compile/test:
+    post:
+      tags:
+        - Obfuscation
+      description: Compile test of regular expressions. Return non empty response only if errors happened
+      operationId: compileTest
+      requestBody:
+        description: Expressions
+        required: true
+        content:
+          application/json:
+            schema:
+              example: ["expr1", "expr2"]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                example: ["expr2": { "description": "description", "index": "index1"}]
+components:
+  schemas:
+    GetConfiguration:
+      type: object
+      properties:
+        is-obfuscation-enabled:
+          type: boolean
+          example: true
+          description: If parameter is true, then obfuscation for logs enabled
+        sensitive-regular-expressions:
+          type: array
+          description: The list of regular expressions for sensitive data search
+          items:
+            type: object
+            properties:
+              importance:
+                type: integer
+                example: 1
+                description: If two regular expressions have interception place in text, that conflict will resolve by importance value
+              id:
+                type: integer
+                example: 1
+                description: The unique ID of regular expression
+              name:
+                type: string
+                example: Passport Number
+                description: The readable name of regular expression
+              pattern:
+                type: string
+                example: "\\d{7}"
+                description: The regular expression pattern
+        white-regular-expressions:
+          type: array
+          description: The list of white regular expressions
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 1
+                description: The unique ID of regular expression
+              name:
+                type: string
+                example: White Passport Number
+                description: The readable name of regular expression
+              pattern:
+                type: string
+                example: "3867742"
+                description: The regular expression pattern
+        field-names:
+          type: array
+          description: The fields in log message which will be obfuscated
+          items:
+            type: string
+        stream-titles:
+          type: array
+          description: The titles of streams for which obfuscation was applied
+          items:
+            type: string
+        text-replacer:
+          type: string
+          description: The type of sensitive data replacement. Static Star Replacer is eight stars - ********
+          example: Static Star Replacer
+    ObfuscationResponse:
+      type: object
+      properties:
+        obfuscatedText:
+          type: string
+          example: "There is some personal data: ********"
+        foundSensitiveData:
+          type: array
+          items:
+            type: object
+            properties:
+              start:
+                type: integer
+              end:
+                type: integer
+              sensitiveText:
+                type: string
+              finder:
+                type: object
+                properties:
+                  importance:
+                    type: integer
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  pattern:
+                    type: string

@@ -1,0 +1,22 @@
+configuration:
+  is-obfuscation-enabled: false
+  sensitive-regular-expressions:
+    - id: 1
+      name: 'Social Security Number'
+      pattern: '(?<![\d\p{IsAlphabetic}]-?)(?>(?!000)(?:[0-6][0-4]\d)-(?!00)\d{2}-(?!0000)\d{4})(?!-?[\d\p{IsAlphabetic}])'
+      importance: 1
+
+    - id: 2
+      name: 'Password Number'
+      pattern: '(?<![\d\p{IsAlphabetic}])(?:(?:(?i)[A-Z]{2}|\d{2})\d{7})(?![\d\p{IsAlphabetic}])'
+      importance: 1
+
+    - id: 3
+      name: 'ICCID'
+      pattern: '(?<!\d)(?>89(?:\d{17,18}))(?!\d)'
+      importance: 1
+
+  field-names: ['message']
+  white-regular-expressions: []
+  stream-titles: ['Audit logs']
+  text-replacer: 'Static Star Replacer'

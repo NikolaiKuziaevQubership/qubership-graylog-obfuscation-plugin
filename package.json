@@ -1,0 +1,25 @@
+{
+  "name": "graylog-obfuscation-plugin",
+  "version": "1.1.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Netcracker/qubership-graylog-obfuscation-plugin"
+  },
+  "scripts": {
+    "build": "webpack --bail"
+  },
+  "keywords": [
+    "graylog",
+    "obfuscation"
+  ],
+  "author": "Qubership",
+  "private": true,
+  "license": "GPL-3",
+  "dependencies": {},
+  "devDependencies": {
+    "graylog-web-plugin": "file:../graylog2-server/graylog2-web-interface/packages/graylog-web-plugin",
+	"superagent": "^3.4.3",
+	"superagent-bluebird-promise": "^4.1.0"
+  }
+}
