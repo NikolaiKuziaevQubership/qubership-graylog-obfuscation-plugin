@@ -34,3 +34,4 @@ public class ConfigurationTest {
         configurationSerializer.deserialize(configuration, configurationMap);
     }
 }
+

@@ -75,3 +75,4 @@ public class Configuration {
         this.whiteRegularExpressions = ImmutableList.copyOf(Objects.requireNonNull(whiteRegularExpressions));
     }
 }
+

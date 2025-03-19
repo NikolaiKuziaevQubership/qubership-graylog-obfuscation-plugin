@@ -54,3 +54,4 @@ public class ObfuscationPluginMetaData implements PluginMetaData {
         return Collections.emptySet();
     }
 }
+

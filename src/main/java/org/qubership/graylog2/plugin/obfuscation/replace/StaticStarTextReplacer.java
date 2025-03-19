@@ -23,3 +23,4 @@ public class StaticStarTextReplacer implements TextReplacer {
         return OBFUSCATED;
     }
 }
+

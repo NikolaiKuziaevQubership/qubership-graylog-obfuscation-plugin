@@ -24,7 +24,7 @@ public class ConfigurationService {
     private final ConfigurationProvider defaultConfigurationProvider;
 
     private final ConfigurationProvider configurationProvider;
-    
+
     private final ConfigurationSerializer configurationSerializer;
 
     @Inject
@@ -174,3 +174,4 @@ public class ConfigurationService {
         return currentConfiguration;
     }
 }
+

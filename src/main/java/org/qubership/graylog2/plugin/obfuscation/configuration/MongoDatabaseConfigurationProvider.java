@@ -98,3 +98,4 @@ public class MongoDatabaseConfigurationProvider implements ConfigurationProvider
         return false;
     }
 }
+

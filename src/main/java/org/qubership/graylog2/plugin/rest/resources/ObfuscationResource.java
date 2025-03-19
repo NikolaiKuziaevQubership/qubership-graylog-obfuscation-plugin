@@ -93,3 +93,4 @@ public class ObfuscationResource extends RestResource implements PluginRestResou
         return Response.ok(compilationFailedExpressions).build();
     }
 }
+

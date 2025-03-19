@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 @Singleton
 @SuppressWarnings("SameParameterValue")
 public class ConfigurationSerializer {
-    
+
     public Map<String, Object> serialize(Configuration configuration) {
         Map<String, Object> parameters = Maps.newHashMap();
 
@@ -64,10 +64,10 @@ public class ConfigurationSerializer {
 
         try {
             Optional<Boolean> isObfuscationEnabled = extractor.getBoolean("is-obfuscation-enabled");
-            Optional<List<SensitiveRegularExpression>> sensitiveRegularExpressions = 
+            Optional<List<SensitiveRegularExpression>> sensitiveRegularExpressions =
                     extractor.getListOfMap("sensitive-regular-expressions", String.class, Object.class)
                     .map(this::deserializeSensitiveRegularExpressions);
-            Optional<List<RegularExpression>> whiteRegularExpressions = 
+            Optional<List<RegularExpression>> whiteRegularExpressions =
                     extractor.getListOfMap("white-regular-expressions", String.class, Object.class)
                     .map(this::deserializeWhiteRegularExpressions);
             Optional<List<String>> fieldNames = extractor.getList("field-names", String.class)
@@ -134,31 +134,31 @@ public class ConfigurationSerializer {
 
         return whiteRegularExpressions;
     }
-    
+
     private int getId(ParameterExtractor extractor) {
         int id = extractor.getRequiredInteger("id");
         if (id < 0) {
             throw new ObfuscationSystemException("The id of sensitive regular expressions cannot lower than 0");
         }
-        
+
         return id;
     }
-    
+
     private String getName(ParameterExtractor extractor) {
         String name = extractor.getRequiredString("name");
         if (StringUtils.isEmpty(name)) {
             throw new ObfuscationSystemException("The name of sensitive regular expressions cannot be empty");
         }
-        
+
         return name;
     }
-    
+
     private Pattern getPattern(ParameterExtractor extractor) {
         Pattern pattern = extractor.getRequiredPattern("pattern");
         if (StringUtils.isEmpty(pattern.pattern())) {
             throw new ObfuscationSystemException("The pattern of sensitive regular expression cannot be empty");
         }
-        
+
         return pattern;
     }
 
@@ -177,7 +177,7 @@ public class ConfigurationSerializer {
 
         return streamTitles;
     }
-    
+
     private List<String> deserializeFieldNames(List<String> fieldNames) {
         for (String fieldName : fieldNames) {
             if (StringUtils.isEmpty(fieldName)) {
@@ -190,7 +190,7 @@ public class ConfigurationSerializer {
                 throw new ObfuscationSystemException("The field names have duplicate name \"" + fieldName + "\"");
             }
         }
-        
+
         return fieldNames;
     }
 
@@ -204,3 +204,4 @@ public class ConfigurationSerializer {
         }
     }
 }
+

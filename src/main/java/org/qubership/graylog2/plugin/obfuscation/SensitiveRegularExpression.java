@@ -29,3 +29,4 @@ public class SensitiveRegularExpression extends RegularExpression implements Fin
         return RegularExpressionSensitiveDataSearcher.SEARCH_TYPE;
     }
 }
+

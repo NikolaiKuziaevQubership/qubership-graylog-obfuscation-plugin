@@ -248,3 +248,4 @@ components:
                     type: string
                   pattern:
                     type: string
+

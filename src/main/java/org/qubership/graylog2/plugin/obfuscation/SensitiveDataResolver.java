@@ -33,7 +33,7 @@ public class SensitiveDataResolver {
                     } else {
                         Finder finder = sensitiveData.getFinder();
                         int currentImportance = finder.getImportance();
-                        
+
                         if (previous.getFinder().getImportance() < currentImportance) {
                             removePrevious(iterator);
                             previous = iterator.next();
@@ -60,13 +60,13 @@ public class SensitiveDataResolver {
 
         return sensitiveDataList;
     }
-    
+
     private void removePrevious(ListIterator<SensitiveData> iterator) {
         iterator.previous();
         iterator.previous();
         iterator.remove();
     }
-    
+
     private void removeCurrentAndPrevious(ListIterator<SensitiveData> iterator) {
         iterator.remove();
         iterator.previous();
@@ -86,13 +86,13 @@ public class SensitiveDataResolver {
             }
         }
     }
-    
+
     private static final class ConflictFinder implements Finder {
 
         private final Finder left;
-        
+
         private final Finder right;
-        
+
         public ConflictFinder(Finder left, Finder right) {
             this.left = left;
             this.right = right;
@@ -124,3 +124,4 @@ public class SensitiveDataResolver {
         }
     }
 }
+

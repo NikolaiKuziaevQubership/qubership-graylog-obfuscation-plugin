@@ -71,3 +71,4 @@ public class RegularExpressionSensitiveDataSearcher implements SensitiveDataSear
         return regularExpressions.stream().map(Finder.class::cast).collect(Collectors.toList());
     }
 }
+

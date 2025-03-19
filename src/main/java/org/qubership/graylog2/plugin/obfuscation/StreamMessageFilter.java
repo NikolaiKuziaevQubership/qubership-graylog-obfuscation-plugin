@@ -50,3 +50,4 @@ public class StreamMessageFilter implements MessageFilter {
         return streamTitles;
     }
 }
+

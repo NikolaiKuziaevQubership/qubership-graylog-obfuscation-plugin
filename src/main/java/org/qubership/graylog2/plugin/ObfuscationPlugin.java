@@ -19,3 +19,4 @@ public class ObfuscationPlugin implements Plugin {
         return Collections.singletonList(new ObfuscationModule());
     }
 }
+

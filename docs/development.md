@@ -48,3 +48,4 @@ Go to /graylog-obfuscation-plugin and run `mvn clean install` for build.
 If build was successful, you are amazing
 
 Russian documentation for React framework: [https://react.dev/learn](https://react.dev/learn)
+
