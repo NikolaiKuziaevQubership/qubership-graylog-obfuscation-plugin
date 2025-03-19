@@ -28,6 +28,7 @@ work/
 .project
 .settings/
 .idea/
+.vscode/
 
 node/
 node_modules/
