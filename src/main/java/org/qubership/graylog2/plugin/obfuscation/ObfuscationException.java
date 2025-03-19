@@ -6,3 +6,4 @@ public class ObfuscationException extends RuntimeException {
         super(message);
     }
 }
+

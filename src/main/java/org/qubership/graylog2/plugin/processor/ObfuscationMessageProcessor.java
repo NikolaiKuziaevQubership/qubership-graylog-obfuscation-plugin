@@ -20,7 +20,7 @@ public class ObfuscationMessageProcessor implements MessageProcessor {
         obfuscationProcessor.obfuscate(messages);
         return messages;
     }
-    
+
     public static class ObfuscationDescriptor implements Descriptor {
 
         @Override
@@ -34,3 +34,4 @@ public class ObfuscationMessageProcessor implements MessageProcessor {
         }
     }
 }
+

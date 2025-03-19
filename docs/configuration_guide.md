@@ -66,3 +66,4 @@ The graylog-obfuscation-plugin have a following endpoints:
 * "id": 1 (The unique ID of regular expression)
 * "name": 'White Passport Number' (The readable name of regular expression)
 * "pattern": '3867742' (The regular expression pattern)
+

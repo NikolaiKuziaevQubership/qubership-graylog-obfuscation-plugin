@@ -100,3 +100,4 @@ public class ObfuscationProcessor {
         message.addField(fieldName, obfuscatedMessage);
     }
 }
+

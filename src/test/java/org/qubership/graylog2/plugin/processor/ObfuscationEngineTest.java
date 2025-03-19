@@ -25,10 +25,10 @@ public class ObfuscationEngineTest {
 
     @Inject
     private ObfuscationEngine obfuscationEngine;
-    
+
     @Inject
     private Configuration configuration;
-    
+
     @Before
     public void setUp() {
         this.configuration.setObfuscationEnabled(true);
@@ -39,7 +39,7 @@ public class ObfuscationEngineTest {
         ObfuscationResponse obfuscationResponse = obfuscationEngine.obfuscateText(new ObfuscationRequest("123-12-1234"));
         Assert.assertEquals("********", obfuscationResponse.getObfuscatedText());
     }
-    
+
     @Test
     public void obfuscationConflictTest() {
         configuration.setSensitiveRegularExpressions(getConflictedSensitiveRegularExpressions(1, 1));
@@ -63,8 +63,8 @@ public class ObfuscationEngineTest {
 
         Assert.assertEquals(1 + StaticStarTextReplacer.OBFUSCATED, obfuscationResponse.getObfuscatedText());
     }
-    
-    private List<SensitiveRegularExpression> getConflictedSensitiveRegularExpressions(int leftImportance, 
+
+    private List<SensitiveRegularExpression> getConflictedSensitiveRegularExpressions(int leftImportance,
                                                                                       int rightImportance) {
         return Lists.newArrayList(
                 new SensitiveRegularExpression(1, "Left", Pattern.compile("12"), leftImportance),
@@ -72,3 +72,4 @@ public class ObfuscationEngineTest {
         );
     }
 }
+

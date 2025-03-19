@@ -6,3 +6,4 @@ const buildConfig = loadBuildConfig(path.resolve(__dirname, './build.config'));
 module.exports = new PluginWebpackConfig('org.qubership.graylog2.plugin.ObfuscationPlugin', buildConfig, {
     // Here goes your additional webpack configuration.
 });
+

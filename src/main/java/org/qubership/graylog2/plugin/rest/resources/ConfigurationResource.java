@@ -53,7 +53,7 @@ public class ConfigurationResource extends RestResource implements PluginRestRes
     public Response getConfiguration() {
         Map<String, Object> serializedConfiguration = configurationService.getSerializedConfiguration();
         JSONObject jsonObject = new JSONObject(serializedConfiguration);
-        
+
         return Response.ok(jsonObject.toString(4)).build();
     }
 
@@ -136,3 +136,4 @@ public class ConfigurationResource extends RestResource implements PluginRestRes
         }
     }
 }
+

@@ -31,3 +31,4 @@ public interface SensitiveDataSearcher {
      */
     List<Finder> getFinders();
 }
+

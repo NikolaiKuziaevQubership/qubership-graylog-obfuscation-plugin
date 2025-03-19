@@ -46,3 +46,4 @@ public class ObfuscationModule extends PluginModule {
         addRestResource(ObfuscationResource.class);
     }
 }
+

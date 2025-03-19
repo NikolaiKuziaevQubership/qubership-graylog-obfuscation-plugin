@@ -71,3 +71,4 @@ public class YamlFileConfigurationProvider implements ConfigurationProvider {
         }
     }
 }
+

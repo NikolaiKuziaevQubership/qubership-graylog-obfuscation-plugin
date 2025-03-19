@@ -10,3 +10,4 @@ public class ObfuscationSystemException extends RuntimeException {
         super(message, cause);
     }
 }
+

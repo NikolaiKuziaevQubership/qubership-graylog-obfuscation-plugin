@@ -18,6 +18,7 @@ public interface ConfigurationProvider {
      * @param configuration current configuration
      */
     void storeConfiguration(Configuration configuration);
-    
+
     void restoreConfiguration(Configuration configuration);
 }
+

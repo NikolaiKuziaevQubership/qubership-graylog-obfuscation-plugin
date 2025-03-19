@@ -25,7 +25,7 @@ public interface Finder {
 
     /**
      * The readable name of finder
-     * 
+     *
      * @return full finder name
      */
     String getFullName();
@@ -46,3 +46,4 @@ public interface Finder {
      */
     String getSearchType();
 }
+

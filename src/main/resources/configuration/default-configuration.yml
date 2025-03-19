@@ -20,3 +20,4 @@ configuration:
   white-regular-expressions: []
   stream-titles: ['Audit logs']
   text-replacer: 'Static Star Replacer'
+

@@ -13,3 +13,4 @@ public interface MessageFilter extends Predicate<Message> {
         return isAccepted(message);
     }
 }
+

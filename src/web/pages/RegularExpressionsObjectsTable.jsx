@@ -136,3 +136,4 @@ export class RegularExpressionsObjectsTable extends React.Component {
         );
     }
 }
+

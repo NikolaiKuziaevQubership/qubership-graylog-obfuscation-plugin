@@ -20,6 +20,9 @@ trim_trailing_whitespace = false
 [*.json]
 insert_final_newline = false
 
+[*.Plugin]
+insert_final_newline = false
+
 [{go.mod,go.sum,*.go,.gitmodules}]
 indent_size = 4
 indent_style = tab

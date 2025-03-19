@@ -80,7 +80,7 @@ export class ObjectsTable extends React.Component {
                 <tr>
                     <td colSpan={this.getColumnsCount()}/>
                     <td className="change-cell">
-                        <Icon name="plus-square" 
+                        <Icon name="plus-square"
                               style={{cursor: 'pointer'}}
                               size="2x"
                               onClick={this.props.onAddElement}/>
@@ -92,3 +92,4 @@ export class ObjectsTable extends React.Component {
         );
     }
 }
+

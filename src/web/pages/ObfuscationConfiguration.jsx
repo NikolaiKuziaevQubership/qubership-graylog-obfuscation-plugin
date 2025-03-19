@@ -259,7 +259,7 @@ export class ObfuscationConfiguration extends React.Component {
             if (disabledProcessors.includes(requiredProcessor)) {
                 return {
                     valid: false,
-                    message: `The ${requiredProcessor}  message processor cannot be disabled. 
+                    message: `The ${requiredProcessor}  message processor cannot be disabled.
                         Stream filter will be disabled`
                 };
             }
@@ -267,7 +267,7 @@ export class ObfuscationConfiguration extends React.Component {
             if (processorsOrder.indexOf(requiredProcessor) > obfuscationProcessorIndex) {
                 return {
                     valid: false,
-                    message: `The ${requiredProcessor} message processor should be higher in order, 
+                    message: `The ${requiredProcessor} message processor should be higher in order,
                         than ${this.processorName}. Stream filter will be disabled`
                 };
             }
@@ -572,3 +572,4 @@ export class ObfuscationConfiguration extends React.Component {
 }
 
 ObfuscationConfiguration.displayName = 'Obfuscation Configuration';
+

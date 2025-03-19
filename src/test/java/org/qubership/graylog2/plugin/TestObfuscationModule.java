@@ -32,3 +32,4 @@ public class TestObfuscationModule extends ObfuscationModule {
         //no-op
     }
 }
+

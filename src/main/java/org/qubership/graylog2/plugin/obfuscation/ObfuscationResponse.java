@@ -5,9 +5,9 @@ import org.qubership.graylog2.plugin.obfuscation.search.SensitiveData;
 import java.util.List;
 
 public class ObfuscationResponse {
-    
+
     private final String obfuscatedText;
-    
+
     private final List<SensitiveData> foundSensitiveData;
 
     public ObfuscationResponse(String obfuscatedText, List<SensitiveData> foundSensitiveData) {
@@ -23,3 +23,4 @@ public class ObfuscationResponse {
         return foundSensitiveData;
     }
 }
+
