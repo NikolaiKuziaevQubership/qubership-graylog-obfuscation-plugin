@@ -1,7 +1,7 @@
-const PluginWebpackConfig = require('graylog-web-plugin').PluginWebpackConfig;
-const loadBuildConfig = require('graylog-web-plugin').loadBuildConfig;
-const path = require('path');
-const buildConfig = loadBuildConfig(path.resolve(__dirname, './build.config'));
+const PluginWebpackConfig = require('graylog-web-plugin').PluginWebpackConfig; // eslint-disable-line no-use-before-define
+const loadBuildConfig = require('graylog-web-plugin').loadBuildConfig; // eslint-disable-line no-use-before-define
+const path = require('path'); // eslint-disable-line no-use-before-define
+const buildConfig = loadBuildConfig(path.resolve(__dirname, './build.config')); // eslint-disable-line no-use-before-define
 
 module.exports = new PluginWebpackConfig('org.qubership.graylog2.plugin.ObfuscationPlugin', buildConfig, {
     // Here goes your additional webpack configuration.

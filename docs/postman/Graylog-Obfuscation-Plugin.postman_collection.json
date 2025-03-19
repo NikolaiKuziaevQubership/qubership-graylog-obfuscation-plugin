@@ -1,271 +1,271 @@
 {
-	"info": {
-		"_postman_id": "7f610c81-4068-45db-b7f4-86449cb0b6ba",
-		"name": "Graylog-Obfuscation-Plugin",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Configuration Sync",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "admin",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [
-					{
-						"key": "X-Requested-By",
-						"value": "Postman",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "sync_mode",
-							"value": "ONLY_CREATE",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration/sync",
-					"protocol": "https",
-					"host": [
-						"{{graylog-server}}"
-					],
-					"path": [
-						"api",
-						"plugins",
-						"org.qubership.graylog2.plugin",
-						"obfuscation",
-						"configuration",
-						"sync"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Configuration",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "admin",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration",
-					"protocol": "https",
-					"host": [
-						"{{graylog-server}}"
-					],
-					"path": [
-						"api",
-						"plugins",
-						"org.qubership.graylog2.plugin",
-						"obfuscation",
-						"configuration"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Install Configuration",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "admin",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-Requested-By",
-						"value": "Postman",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration",
-					"protocol": "https",
-					"host": [
-						"{{graylog-server}}"
-					],
-					"path": [
-						"api",
-						"plugins",
-						"org.qubership.graylog2.plugin",
-						"obfuscation",
-						"configuration"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reset Configuration",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "admin",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [
-					{
-						"key": "X-Requested-By",
-						"value": "Postman",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration/reset",
-					"protocol": "https",
-					"host": [
-						"{{graylog-server}}"
-					],
-					"path": [
-						"api",
-						"plugins",
-						"org.qubership.graylog2.plugin",
-						"obfuscation",
-						"configuration",
-						"reset"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Restore Configuration",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obfuscate Text",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "{{password}}",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "{{user}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "text/plain",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation",
-					"protocol": "https",
-					"host": [
-						"{{graylog-server}}"
-					],
-					"path": [
-						"api",
-						"plugins",
-						"org.qubership.graylog2.plugin",
-						"obfuscation"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "_postman_id": "7f610c81-4068-45db-b7f4-86449cb0b6ba",
+        "name": "Graylog-Obfuscation-Plugin",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Configuration Sync",
+            "request": {
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "password",
+                            "value": "admin",
+                            "type": "string"
+                        },
+                        {
+                            "key": "username",
+                            "value": "admin",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "X-Requested-By",
+                        "value": "Postman",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "value": "application/x-www-form-urlencoded",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "sync_mode",
+                            "value": "ONLY_CREATE",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration/sync",
+                    "protocol": "https",
+                    "host": [
+                        "{{graylog-server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "plugins",
+                        "org.qubership.graylog2.plugin",
+                        "obfuscation",
+                        "configuration",
+                        "sync"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Configuration",
+            "request": {
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "password",
+                            "value": "admin",
+                            "type": "string"
+                        },
+                        {
+                            "key": "username",
+                            "value": "admin",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration",
+                    "protocol": "https",
+                    "host": [
+                        "{{graylog-server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "plugins",
+                        "org.qubership.graylog2.plugin",
+                        "obfuscation",
+                        "configuration"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Install Configuration",
+            "request": {
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "password",
+                            "value": "admin",
+                            "type": "string"
+                        },
+                        {
+                            "key": "username",
+                            "value": "admin",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "X-Requested-By",
+                        "value": "Postman",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration",
+                    "protocol": "https",
+                    "host": [
+                        "{{graylog-server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "plugins",
+                        "org.qubership.graylog2.plugin",
+                        "obfuscation",
+                        "configuration"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Reset Configuration",
+            "request": {
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "password",
+                            "value": "admin",
+                            "type": "string"
+                        },
+                        {
+                            "key": "username",
+                            "value": "admin",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "X-Requested-By",
+                        "value": "Postman",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation/configuration/reset",
+                    "protocol": "https",
+                    "host": [
+                        "{{graylog-server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "plugins",
+                        "org.qubership.graylog2.plugin",
+                        "obfuscation",
+                        "configuration",
+                        "reset"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Restore Configuration",
+            "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": ""
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Obfuscate Text",
+            "request": {
+                "auth": {
+                    "type": "basic",
+                    "basic": [
+                        {
+                            "key": "password",
+                            "value": "{{password}}",
+                            "type": "string"
+                        },
+                        {
+                            "key": "username",
+                            "value": "{{user}}",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "text/plain",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "https://{{graylog-server}}/api/plugins/org.qubership.graylog2.plugin/obfuscation",
+                    "protocol": "https",
+                    "host": [
+                        "{{graylog-server}}"
+                    ],
+                    "path": [
+                        "api",
+                        "plugins",
+                        "org.qubership.graylog2.plugin",
+                        "obfuscation"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
 }
